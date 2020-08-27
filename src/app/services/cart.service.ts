@@ -51,13 +51,12 @@ export class CartService {
   }
 
   fetchCartProduct(){
-    this.cartProductArray = JSON.parse(localStorage.getItem("cart"))
-    this.cartCountEmitter.emit(this.cartProductArray.length)
+    this.cartProductArray = JSON.parse(localStorage.getItem("cart")) || []
+    this.cartCountEmitter.emit(this.cartProductArray && this.cartProductArray.length?  this.cartProductArray.length:0)
     return this.cartProductArray
   }
 
   RemoveCartItem(product){
-    console.log("delete>>>",product);
     const index: number = this.cartProductArray.indexOf(product);
     if (index !== -1) {
       this.cartProductArray.splice(index, 1);

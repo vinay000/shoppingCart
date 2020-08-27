@@ -9,11 +9,11 @@ export class FetchProductService {
   constructor(private http:HttpClient) { }
 
   fetchProduct(){
-    const url:string = "../../assets/product.json"
+    const url:string = "assets/product.json"
     return this.http.get(url);
   }
   fetchCategoy(){
-    const url:string = "../../assets/category.json"
+    const url:string = "assets/category.json"
     return this.http.get(url);
   }
 }
