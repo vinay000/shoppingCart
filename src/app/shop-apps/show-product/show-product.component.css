@@ -1,0 +1,28 @@
+.pad-page{
+    margin-top: 2rem;
+    padding-top: 50px;
+}
+.card-img-top{
+    max-height: 250px;
+}
+.btn-sm{
+    width:200px;
+}
+.list-group-item{
+    cursor: pointer;
+}
+
+.list-group-item:hover{
+    background-color: rgb(177, 173, 173);
+}
+.list-group .list-group-item.active{
+    background-color: rgb(177, 173, 173);
+    z-index: 1;
+}
+
+/* .list-group-item:active{
+    z-index: 1;
+    color: #fff;
+    background-color: #282b2ee1;
+    border-color: #212529;
+} */

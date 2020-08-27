@@ -1,0 +1,46 @@
+<div class="container pad-page">
+
+  <div class="row">
+
+    <div class="col-lg-3">
+      <!-- <h1 class="my-4">Shop Name</h1> -->
+      <div class="list-group">
+        <a  class="list-group-item list-group-item-action "  (click)="showAllCategory()">Show All</a>
+        <a  class="list-group-item list-group-item-action"  (click)="selectCategory(category.category_name)" *ngFor="let category of categoryArray">{{category.name}}</a>
+      </div>
+    </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of filteredProductArray">
+          <div class="card h-100">
+            <a><img class="card-img-top" src={{product.product_image_url}} alt=""></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a>{{product.product_name}}</a>
+              </h4>
+              <h5>${{product.product_price}}</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+              </p>
+            </div>
+            <div class="card-footer justify-content-center mx-auto">
+              <!-- <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small> -->
+              <a class="btn btn-danger btn-sm" (click)="addToCart(product)">Add
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+                  <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0v-2z"/>
+                  <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+  </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
+</div>

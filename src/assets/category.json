@@ -1,0 +1,10 @@
+{
+    "categories":[
+        {"category_name":"tshirt", "name":"Mens T-Shirt"},
+        {"category_name":"shoes", "name":"Men Shoes"},
+        {"category_name":"jean", "name":"Jean"},
+        {"category_name":"shrugs", "name":"Shrugs"}
+       
+
+    ]
+}

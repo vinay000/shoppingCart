@@ -1,0 +1,55 @@
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Cart Items</h5>
+        <a class="close" routerLink="/" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+      <div class="modal-body">
+
+        <div class="justify-content-center" *ngIf="!localCart || localCart.length === 0">
+          <img class="d-inline-block"src="https://icons.iconarchive.com/icons/webiconset/e-commerce/128/empty-shopping-cart-icon.png" alt="">
+          <h4 class="d-inline-block pl-3 text-center text-muted">Opps! your Cart is empty!!!</h4>
+        </div>
+        </div>
+        <div class="card" style="width:100%;" >
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let product of localCart">
+              <div *ngIf="!product">
+                <p class="text-center text-muted">Cart is empty!!!</p>
+              </div>
+              <div class="d-inline-block">
+                <img src="{{product.product.product_image_url}}" style="width: 80px; height: 80px;" alt="">
+              </div>
+
+              &emsp;
+              <div class="d-inline-block pl-5">
+                <h5>{{product.product.product_name}}</h5>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <a (click)="increaseQauntity(product)" class="btn btn-secondary">+</a>
+                  <button type="button" class="btn btn-secondary disabled">{{product.quantity}}</button>
+                  <a (click)="decreaseQuantity(product)" class="btn btn-secondary">-</a>
+                </div>
+              </div>
+
+              <div class="d-inline-block pl-5">
+                <a (click)="deleteCartItem(product)" class="btn btn-outline-danger">Remove</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+       
+      <div class="modal-footer">
+        <a class="btn btn-secondary" routerLink="/" data-dismiss="modal">Close</a>
+        <button type="button" [disabled]="!localCart || localCart.length === 0" class="btn btn-success">Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
